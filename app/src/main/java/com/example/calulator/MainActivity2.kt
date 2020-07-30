@@ -15,7 +15,6 @@ class MainActivity2 : AppCompatActivity() {
     var operator_var:String=""
     var first_num=""
     var second_num=""
-    var flag=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
@@ -68,8 +67,8 @@ class MainActivity2 : AppCompatActivity() {
             number_view.text=""
         }
         else {
-            first_num=calculate()//0
-            operator_var=op//cos
+            first_num=calculate()
+            operator_var=op
             if ((op=="sin"||op=="cos"||op=="tan")&&first_num.isNotEmpty()&&second_num.isEmpty()){
                 calculate()
                 operator_var=""
@@ -85,7 +84,6 @@ class MainActivity2 : AppCompatActivity() {
 
             when (operator_var) {
 
-
                 "+" -> res = first_num.toDouble() + second_num.toDouble()
                 "-" -> res = first_num.toDouble() - second_num.toDouble()
                 "*" -> res = first_num.toDouble() * second_num.toDouble()
@@ -95,8 +93,6 @@ class MainActivity2 : AppCompatActivity() {
                 "cos"->res= kotlin.math.cos(first_num.toDouble()*0.0174532925)
                 "tan"->res= kotlin.math.tan(first_num.toDouble()*0.0174532925)
                 "="-> number_view.text=first_num
-
-
 
             }
         first_num=res.toString()
